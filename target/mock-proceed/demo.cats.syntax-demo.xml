@@ -1,0 +1,7 @@
+<testsuite failures="0" name="demo/cats/syntax-demo.feature" skipped="0" tests="1" time="0.004084">
+  <testcase classname="demo.cats.syntax-demo" name="demo of json handling" time="0.004084">
+    <system-out>* def billie = ............................................................ passed
+* match billie.kittens contains { id: 42, name: 'Wild' } .................. passed
+* match billie.kittens contains { id: '#? _ &gt; 25', name: '#string' } ...... passed</system-out>
+  </testcase>
+</testsuite>

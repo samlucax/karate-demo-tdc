@@ -1,0 +1,124 @@
+<testsuite failures="0" name="demo/cookies/cookies.feature" skipped="0" tests="4" time="0.146866">
+  <testcase classname="demo.cookies.cookies" name="no cookies" time="0.017435">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == [] .................................................. passed</system-out>
+  </testcase>
+  <testcase classname="demo.cookies.cookies" name="one cookie, and it is sent automatically in the next request" time="0.10489">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == [] .................................................. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = 'bar' .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'bar' } .............. passed
+Given path 'search', 'cookies' ............................................ passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'bar' } .............. passed
+* print 'cookies: ', responseCookies ...................................... passed
+* configure cookies = null ................................................ passed
+Given path 'search', 'cookies' ............................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == [] .................................................. passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = 'blah' ................................................... passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'blah' } ............. passed</system-out>
+  </testcase>
+  <testcase classname="demo.cookies.cookies" name="cookie as json" time="0.008378">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == [] .................................................. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = 'bar' .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'bar' } .............. passed
+Given path 'search', 'cookies' ............................................ passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'bar' } .............. passed
+* print 'cookies: ', responseCookies ...................................... passed
+* configure cookies = null ................................................ passed
+Given path 'search', 'cookies' ............................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == [] .................................................. passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = 'blah' ................................................... passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'blah' } ............. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = { value: 'bar' } ......................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response[0] contains { name: 'foo', value: 'bar' } .............. passed</system-out>
+  </testcase>
+  <testcase classname="demo.cookies.cookies" name="cookie returned has dots in the domain which violates RFC 2109" time="0.016163">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == [] .................................................. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = 'bar' .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'bar' } .............. passed
+Given path 'search', 'cookies' ............................................ passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'bar' } .............. passed
+* print 'cookies: ', responseCookies ...................................... passed
+* configure cookies = null ................................................ passed
+Given path 'search', 'cookies' ............................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == [] .................................................. passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = 'blah' ................................................... passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+And match response == '#[1]' .............................................. passed
+And match response[0] contains { name: 'foo', value: 'blah' } ............. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = { value: 'bar' } ......................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response[0] contains { name: 'foo', value: 'bar' } .............. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search', 'cookies' ............................................ passed
+And cookie foo = { value: 'bar' } ......................................... passed
+And param domain = '.abc.com' ............................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response[0] contains { name: 'foo', value: 'bar', domain: '.abc.com' } . passed</system-out>
+  </testcase>
+</testsuite>

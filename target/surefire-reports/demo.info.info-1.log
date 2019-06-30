@@ -1,0 +1,9 @@
+11:05:00.362 [print] info: {
+  "featureDir": "/Users/samuel.lucas/projetos-automacao/karate/karate-demo/target/test-classes/demo/info",
+  "scenarioType": "Scenario",
+  "featureFileName": "info.feature",
+  "errorMessage": null,
+  "scenarioDescription": "",
+  "scenarioName": "first scenario"
+}
+

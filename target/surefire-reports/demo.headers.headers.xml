@@ -1,0 +1,381 @@
+<testsuite failures="0" name="demo/headers/headers.feature" skipped="0" tests="7" time="0.334256">
+  <testcase classname="demo.headers.headers" name="configure function" time="0.063233">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = read('classpath:headers.js') ........................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.headers" name="configure json" time="0.034353">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = read('classpath:headers.js') ........................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = { Authorization: '#(token + time + demoBaseUrl)' } .. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.headers" name="set header" time="0.040691">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = read('classpath:headers.js') ........................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = { Authorization: '#(token + time + demoBaseUrl)' } .. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = token + time + demoBaseUrl ....................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.headers" name="multi-value headers" time="0.033601">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = read('classpath:headers.js') ........................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = { Authorization: '#(token + time + demoBaseUrl)' } .. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = token + time + demoBaseUrl ....................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = 'dummy', token + time + demoBaseUrl .............. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.headers" name="set headers using json" time="0.069364">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = read('classpath:headers.js') ........................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = { Authorization: '#(token + time + demoBaseUrl)' } .. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = token + time + demoBaseUrl ....................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = 'dummy', token + time + demoBaseUrl .............. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* headers { Authorization: '#(token + time + demoBaseUrl)' } .............. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.headers" name="set multi-value headers using json" time="0.019253">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = read('classpath:headers.js') ........................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = { Authorization: '#(token + time + demoBaseUrl)' } .. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = token + time + demoBaseUrl ....................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = 'dummy', token + time + demoBaseUrl .............. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* headers { Authorization: '#(token + time + demoBaseUrl)' } .............. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* headers { Authorization: ['dummy', '#(token + time + demoBaseUrl)'] } ... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.headers" name="set multi-value headers using function call" time="0.073761">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = read('classpath:headers.js') ........................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* configure headers = { Authorization: '#(token + time + demoBaseUrl)' } .. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = token + time + demoBaseUrl ....................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* header Authorization = 'dummy', token + time + demoBaseUrl .............. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* headers { Authorization: '#(token + time + demoBaseUrl)' } .............. passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* headers { Authorization: ['dummy', '#(token + time + demoBaseUrl)'] } ... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+And match responseCookies contains { time: '#notnull' } ................... passed
+And match responseCookies !contains { blah: '#notnull' } .................. passed
+* def fun = function(arg){ return [arg.first, arg.second] } ............... passed
+* header Authorization = call fun { first: 'dummy', second: '#(token + time + demoBaseUrl)' } . passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+</testsuite>

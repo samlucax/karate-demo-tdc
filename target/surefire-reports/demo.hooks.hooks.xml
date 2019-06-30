@@ -1,0 +1,72 @@
+<testsuite failures="0" name="demo/hooks/hooks.feature" skipped="0" tests="5" time="0.07307">
+  <testcase classname="demo.hooks.hooks" name="first" time="0.007251">
+    <system-out>* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.hooks.hooks" name="second" time="0.000637">
+    <system-out>* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.hooks.hooks" name="3" time="0.020945">
+    <system-out>* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo + 1 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.hooks.hooks" name="4" time="0.02256">
+    <system-out>* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo + 1 ........................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo + 2 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.hooks.hooks" name="'after' hooks do not apply to called features" time="0.021677">
+    <system-out>* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo ............................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo + 1 ........................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* print foo + 2 ........................................................... passed
+* def foo = 'hello' ....................................................... passed
+* configure afterScenario = ............................................... passed
+* configure afterFeature = function(){ karate.call('after-feature.feature'); } . passed
+* def result = call read('called.feature') ................................ passed</system-out>
+  </testcase>
+</testsuite>

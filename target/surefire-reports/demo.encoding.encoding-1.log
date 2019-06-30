@@ -1,0 +1,20 @@
+11:04:59.853 request:
+1 > GET http://127.0.0.1:51918/encoding/�Ill~Formed@RequiredString!
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: 127.0.0.1:51918
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:04:59.873 response time in milliseconds: 19.92
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Content-Length: 29
+1 < Content-Type: text/plain;charset=UTF-8
+1 < Date: Tue, 09 Apr 2019 14:04:59 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+�Ill~Formed@RequiredString!
+

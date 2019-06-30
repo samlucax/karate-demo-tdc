@@ -1,0 +1,53 @@
+11:05:00.429 request:
+1 > POST http://127.0.0.1:51918/soap
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 306
+1 > Content-Type: text/xml; charset=UTF-8
+1 > Host: 127.0.0.1:51918
+1 > SOAPAction: http://tempuri.org/Add
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soap:Body>
+    <Add xmlns="http://tempuri.org/">
+      <intA>2</intA>
+      <intB>3</intB>
+    </Add>
+  </soap:Body>
+</soap:Envelope>
+
+11:05:00.445 response time in milliseconds: 15.93
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Content-Length: 323
+1 < Content-Type: text/plain;charset=UTF-8
+1 < Date: Tue, 09 Apr 2019 14:05:00 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><AddResponse xmlns="http://tempuri.org/"><AddResult>5</AddResult></AddResponse></soap:Body></soap:Envelope>
+
+11:05:00.457 [print] response:  {
+  "soap:Envelope": {
+    "_": {
+      "soap:Body": {
+        "AddResponse": {
+          "_": {
+            "AddResult": "5"
+          },
+          "@": {
+            "xmlns": "http://tempuri.org/"
+          }
+        }
+      }
+    },
+    "@": {
+      "xmlns:soap": "http://www.w3.org/2003/05/soap-envelope",
+      "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+      "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"
+    }
+  }
+}
+

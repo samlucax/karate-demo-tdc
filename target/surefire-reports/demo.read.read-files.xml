@@ -1,0 +1,27 @@
+<testsuite failures="0" name="demo/read/read-files.feature" skipped="0" tests="2" time="0.519118">
+  <testcase classname="demo.read.read-files" name="using json from a file" time="0.438828">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* path 'echo' ............................................................. passed
+* table employees ......................................................... passed
+Given request ({ employees: employees }) .................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match $ == read('sample.json') ........................................ passed</system-out>
+  </testcase>
+  <testcase classname="demo.read.read-files" name="using xml from a file" time="0.08029">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* path 'echo' ............................................................. passed
+* table employees ......................................................... passed
+Given request ({ employees: employees }) .................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match $ == read('sample.json') ........................................ passed
+* url demoBaseUrl ......................................................... passed
+* path 'echo' ............................................................. passed
+* set payload /employees .................................................. passed
+Given request payload ..................................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match / == read('sample.xml') ......................................... passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,67 @@
+11:05:18.564 request:
+1 > POST http://127.0.0.1:52314/cats
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 14
+1 > Content-Type: application/json; charset=UTF-8
+1 > Host: 127.0.0.1:52314
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"name":"Bob"}
+
+11:05:18.572 response time in milliseconds: 7.59
+1 < 200
+1 < Content-Type: application/json
+{"name":"Bob","id":3}
+
+11:05:18.578 [print] bob: {
+  "name": "Bob",
+  "id": 3
+}
+
+11:05:18.581 request:
+2 > POST http://127.0.0.1:52314/cats
+2 > Accept-Encoding: gzip,deflate
+2 > Connection: Keep-Alive
+2 > Content-Length: 15
+2 > Content-Type: application/json; charset=UTF-8
+2 > Host: 127.0.0.1:52314
+2 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"name":"Wild"}
+
+11:05:18.588 response time in milliseconds: 7.25
+2 < 200
+2 < Content-Type: application/json
+{"name":"Wild","id":4}
+
+11:05:18.593 [print] wild: {
+  "name": "Wild",
+  "id": 4
+}
+
+11:05:18.599 request:
+3 > POST http://127.0.0.1:52314/cats
+3 > Accept-Encoding: gzip,deflate
+3 > Connection: Keep-Alive
+3 > Content-Length: 74
+3 > Content-Type: application/json; charset=UTF-8
+3 > Host: 127.0.0.1:52314
+3 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"name":"Billie","kittens":[{"name":"Bob","id":3},{"name":"Wild","id":4}]}
+
+11:05:18.607 response time in milliseconds: 6.68
+3 < 200
+3 < Content-Type: application/json
+{"name":"Billie","kittens":[{"name":"Bob","id":3},{"name":"Wild","id":4}],"id":5}
+
+11:05:18.624 request:
+4 > GET http://127.0.0.1:52314/cats/5/kittens
+4 > Accept-Encoding: gzip,deflate
+4 > Connection: Keep-Alive
+4 > Host: 127.0.0.1:52314
+4 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:18.638 response time in milliseconds: 13.81
+4 < 200
+4 < Content-Type: application/json
+[{"name":"Bob","id":3},{"name":"Wild","id":4}]
+

@@ -1,0 +1,97 @@
+<testsuite failures="0" name="demo/redirect/redirect.feature" skipped="0" tests="4" time="0.163589">
+  <testcase classname="demo.redirect.redirect" name="get redirects are followed by default" time="0.053747">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'redirect' ..................................................... passed
+And param foo = 'bar' ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.redirect.redirect" name="get redirects can be disabled" time="0.043679">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'redirect' ..................................................... passed
+And param foo = 'bar' ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed
+* url demoBaseUrl ......................................................... passed
+* configure followRedirects = false ....................................... passed
+Given path 'redirect' ..................................................... passed
+When method get ........................................................... passed
+Then status 302 ........................................................... passed
+And match header Location == demoBaseUrl + '/search' ...................... passed
+* def location = responseHeaders['Location'][0] ........................... passed
+Given url location ........................................................ passed
+And param foo = 'bar' ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.redirect.redirect" name="post redirects are followed by default" time="0.012091">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'redirect' ..................................................... passed
+And param foo = 'bar' ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed
+* url demoBaseUrl ......................................................... passed
+* configure followRedirects = false ....................................... passed
+Given path 'redirect' ..................................................... passed
+When method get ........................................................... passed
+Then status 302 ........................................................... passed
+And match header Location == demoBaseUrl + '/search' ...................... passed
+* def location = responseHeaders['Location'][0] ........................... passed
+Given url location ........................................................ passed
+And param foo = 'bar' ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'redirect' ..................................................... passed
+And param foo = 'bar' ..................................................... passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.redirect.redirect" name="post redirects can be disabled" time="0.054072">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'redirect' ..................................................... passed
+And param foo = 'bar' ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed
+* url demoBaseUrl ......................................................... passed
+* configure followRedirects = false ....................................... passed
+Given path 'redirect' ..................................................... passed
+When method get ........................................................... passed
+Then status 302 ........................................................... passed
+And match header Location == demoBaseUrl + '/search' ...................... passed
+* def location = responseHeaders['Location'][0] ........................... passed
+Given url location ........................................................ passed
+And param foo = 'bar' ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'redirect' ..................................................... passed
+And param foo = 'bar' ..................................................... passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed
+* url demoBaseUrl ......................................................... passed
+* configure followRedirects = false ....................................... passed
+Given path 'redirect' ..................................................... passed
+And request {} ............................................................ passed
+When method post .......................................................... passed
+Then status 302 ........................................................... passed
+And match header Location == demoBaseUrl + '/search' ...................... passed
+* def location = responseHeaders['Location'][0] ........................... passed
+Given url location ........................................................ passed
+And param foo = 'bar' ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { foo: ['bar'] } .................................... passed</system-out>
+  </testcase>
+</testsuite>

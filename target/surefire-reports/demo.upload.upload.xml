@@ -1,0 +1,239 @@
+<testsuite failures="0" name="demo/upload/upload.feature" skipped="0" tests="5" time="0.359053">
+  <testcase classname="demo.upload.upload" name="upload file" time="0.104074">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart field myFile = read('test.pdf') ............................. passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('test.pdf') .................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'myFile' .................... passed
+And match header Content-Type == 'application/octet-stream' ............... passed
+* def FileChecker = Java.type('com.intuit.karate.demo.util.FileChecker') .. passed
+* json fileInfo = FileChecker.getMetadata(id) ............................. passed
+* match fileInfo == { id: '#(id)', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed</system-out>
+  </testcase>
+  <testcase classname="demo.upload.upload" name="upload with filename and content-type specified" time="0.076151">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart field myFile = read('test.pdf') ............................. passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('test.pdf') .................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'myFile' .................... passed
+And match header Content-Type == 'application/octet-stream' ............... passed
+* def FileChecker = Java.type('com.intuit.karate.demo.util.FileChecker') .. passed
+* json fileInfo = FileChecker.getMetadata(id) ............................. passed
+* match fileInfo == { id: '#(id)', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart file myFile = { read: 'test.pdf', filename: 'upload-name.pdf', contentType: 'application/pdf' } . passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'upload-name.pdf', message: 'hello world', contentType: 'application/pdf' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match responseBytes == read('test.pdf') ............................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'upload-name.pdf' ........... passed
+And match header Content-Type == 'application/pdf' ........................ passed</system-out>
+  </testcase>
+  <testcase classname="demo.upload.upload" name="upload with content created dynamically" time="0.065771">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart field myFile = read('test.pdf') ............................. passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('test.pdf') .................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'myFile' .................... passed
+And match header Content-Type == 'application/octet-stream' ............... passed
+* def FileChecker = Java.type('com.intuit.karate.demo.util.FileChecker') .. passed
+* json fileInfo = FileChecker.getMetadata(id) ............................. passed
+* match fileInfo == { id: '#(id)', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart file myFile = { read: 'test.pdf', filename: 'upload-name.pdf', contentType: 'application/pdf' } . passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'upload-name.pdf', message: 'hello world', contentType: 'application/pdf' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match responseBytes == read('test.pdf') ............................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'upload-name.pdf' ........... passed
+And match header Content-Type == 'application/pdf' ........................ passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And def value = 'lorem ipsum' ............................................. passed
+And multipart file myFile = { value: '#(value)', filename: 'hello.txt', contentType: 'text/plain' } . passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response contains { id: '#uuid', filename: 'hello.txt', message: 'hello world' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == 'lorem ipsum' ....................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'hello.txt' ................. passed
+And match header Content-Type contains 'text/plain' ....................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.upload.upload" name="upload multipart/mixed" time="0.068267">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart field myFile = read('test.pdf') ............................. passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('test.pdf') .................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'myFile' .................... passed
+And match header Content-Type == 'application/octet-stream' ............... passed
+* def FileChecker = Java.type('com.intuit.karate.demo.util.FileChecker') .. passed
+* json fileInfo = FileChecker.getMetadata(id) ............................. passed
+* match fileInfo == { id: '#(id)', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart file myFile = { read: 'test.pdf', filename: 'upload-name.pdf', contentType: 'application/pdf' } . passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'upload-name.pdf', message: 'hello world', contentType: 'application/pdf' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match responseBytes == read('test.pdf') ............................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'upload-name.pdf' ........... passed
+And match header Content-Type == 'application/pdf' ........................ passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And def value = 'lorem ipsum' ............................................. passed
+And multipart file myFile = { value: '#(value)', filename: 'hello.txt', contentType: 'text/plain' } . passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response contains { id: '#uuid', filename: 'hello.txt', message: 'hello world' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == 'lorem ipsum' ....................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'hello.txt' ................. passed
+And match header Content-Type contains 'text/plain' ....................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files', 'mixed' ............................................... passed
+And multipart field myJson = { text: 'hello world' } ...................... passed
+And multipart file myFile = { read: 'test.pdf', filename: 'upload-name.pdf', contentType: 'application/pdf' } . passed
+And header Content-Type = 'multipart/mixed' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'upload-name.pdf', message: 'hello world', contentType: 'application/pdf' } . passed</system-out>
+  </testcase>
+  <testcase classname="demo.upload.upload" name="multipart upload has content-length header set" time="0.044791">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart field myFile = read('test.pdf') ............................. passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('test.pdf') .................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'myFile' .................... passed
+And match header Content-Type == 'application/octet-stream' ............... passed
+* def FileChecker = Java.type('com.intuit.karate.demo.util.FileChecker') .. passed
+* json fileInfo = FileChecker.getMetadata(id) ............................. passed
+* match fileInfo == { id: '#(id)', filename: 'myFile', message: 'hello world', contentType: 'application/octet-stream' } . passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And multipart file myFile = { read: 'test.pdf', filename: 'upload-name.pdf', contentType: 'application/pdf' } . passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'upload-name.pdf', message: 'hello world', contentType: 'application/pdf' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match responseBytes == read('test.pdf') ............................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'upload-name.pdf' ........... passed
+And match header Content-Type == 'application/pdf' ........................ passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files' ........................................................ passed
+And def value = 'lorem ipsum' ............................................. passed
+And multipart file myFile = { value: '#(value)', filename: 'hello.txt', contentType: 'text/plain' } . passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response contains { id: '#uuid', filename: 'hello.txt', message: 'hello world' } . passed
+And def id = response.id .................................................. passed
+Given path 'files', id .................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == 'lorem ipsum' ....................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'hello.txt' ................. passed
+And match header Content-Type contains 'text/plain' ....................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'files', 'mixed' ............................................... passed
+And multipart field myJson = { text: 'hello world' } ...................... passed
+And multipart file myFile = { read: 'test.pdf', filename: 'upload-name.pdf', contentType: 'application/pdf' } . passed
+And header Content-Type = 'multipart/mixed' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#uuid', filename: 'upload-name.pdf', message: 'hello world', contentType: 'application/pdf' } . passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search', 'headers' ............................................ passed
+And multipart field myFile = read('test.pdf') ............................. passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response['content-length'][0] == '#notnull' ..................... passed
+Given path 'search', 'headers' ............................................ passed
+And multipart file myFile = { read: 'test.pdf', filename: 'upload-name.pdf', contentType: 'application/pdf' } . passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response['content-length'][0] == '#notnull' ..................... passed</system-out>
+  </testcase>
+</testsuite>

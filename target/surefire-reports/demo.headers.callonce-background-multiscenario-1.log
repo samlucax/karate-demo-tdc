@@ -1,0 +1,22 @@
+11:04:59.600 >> lock acquired, begin callonce: read('common-noheaders.feature')
+11:04:59.663 << lock released, cached callonce: read('common-noheaders.feature')
+11:04:59.735 request:
+1 > GET http://127.0.0.1:51918/headers/a1b9c5fa-d319-40c7-a4c0-e134d6eec0d1?url=http%3A%2F%2F127.0.0.1%3A51918
+1 > Accept-Encoding: gzip,deflate
+1 > Authorization: a1b9c5fa-d319-40c7-a4c0-e134d6eec0d11554818699652http://127.0.0.1:51918
+1 > Connection: Keep-Alive
+1 > Cookie: time=1554818699652
+1 > Host: 127.0.0.1:51918
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:04:59.740 response time in milliseconds: 5.00
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Content-Length: 0
+1 < Date: Tue, 09 Apr 2019 14:04:59 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+

@@ -1,0 +1,15 @@
+<testsuite failures="0" name="demo/calldynamic/call-dynamic-json.feature" skipped="0" tests="1" time="0.692659">
+  <testcase classname="demo.calldynamic.call-dynamic-json" name="create kittens and validate" time="0.692659">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def creator = read('../callarray/kitten-create.feature') ................ passed
+* def kittensFn = ......................................................... passed
+* def kittens = call kittensFn 5 .......................................... passed
+* def result1 = call creator kittens ...................................... passed
+* def created = $result1[*].response ...................................... passed
+* assert created.length == 5 .............................................. passed
+* match each created == { id: '#number', name: '#regex Kit[0-4]' } ........ passed
+* match created[*].name contains [ 'Kit0', 'Kit1', 'Kit2', 'Kit3', 'Kit4' ] . passed
+* def result2 = call read('get-cat.feature') created ...................... passed
+* match result2[*].response contains created .............................. passed</system-out>
+  </testcase>
+</testsuite>

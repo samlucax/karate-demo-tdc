@@ -1,0 +1,23 @@
+11:05:00.312 request:
+1 > POST http://127.0.0.1:51918/search/headers
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 13
+1 > Content-Type: application/json; charset=UTF-8
+1 > Host: 127.0.0.1:51918
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"foo":"bar"}
+
+11:05:00.318 response time in milliseconds: 4.24
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Content-Type: application/json;charset=UTF-8
+1 < Date: Tue, 09 Apr 2019 14:04:59 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"content-type":["application/json; charset=UTF-8"],"content-length":["13"],"host":["127.0.0.1:51918"],"connection":["Keep-Alive"],"user-agent":["Apache-HttpClient/4.5.5 (Java/1.8.0_181)"],"accept-encoding":["gzip,deflate"]}
+

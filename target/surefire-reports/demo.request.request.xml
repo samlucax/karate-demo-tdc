@@ -1,0 +1,23 @@
+<testsuite failures="0" name="demo/request/request.feature" skipped="0" tests="1" time="0.232901">
+  <testcase classname="demo.request.request" name="create cat" time="0.232901">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'cats' ......................................................... passed
+And param foo = 'bar' ..................................................... passed
+And request { name: 'Billie' } ............................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Billie' } ................... passed
+* def temp = karate.prevRequest ........................................... passed
+* def requestMethod = temp.method ......................................... passed
+* match requestMethod == 'POST' ........................................... passed
+* def requestHeaders = temp.headers ....................................... passed
+* def contentType = temp.headers['Content-Type'][0] ....................... passed
+* match contentType contains 'application/json' ........................... passed
+* match contentType contains 'charset=UTF-8' .............................. passed
+* def requestUri = temp.uri ............................................... passed
+* match requestUri == demoBaseUrl + '/cats?foo=bar' ....................... passed
+* def requestBody = temp.body ............................................. passed
+* def requestString = new java.lang.String(requestBody, 'utf-8') .......... passed
+* match requestString == '{"name":"Billie"}' .............................. passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,39 @@
+<testsuite failures="0" name="demo/polling/polling.feature" skipped="0" tests="2" time="0.588942">
+  <testcase classname="demo.polling.polling" name="get greeting and keep polling until id is n + 5" time="0.547584">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'greeting', 'reset' .............................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { counter: 0 } ...................................... passed
+* def waitUntil = ......................................................... passed
+* def result = call read('get.feature') ................................... passed
+* def current = result.response ........................................... passed
+* print 'current: ' + current ............................................. passed
+* def target = current.id + 5 ............................................. passed
+* call waitUntil target ................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.polling.polling" name="using the karate retry syntax" time="0.041358">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'greeting', 'reset' .............................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { counter: 0 } ...................................... passed
+* def waitUntil = ......................................................... passed
+* def result = call read('get.feature') ................................... passed
+* def current = result.response ........................................... passed
+* print 'current: ' + current ............................................. passed
+* def target = current.id + 5 ............................................. passed
+* call waitUntil target ................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'greeting', 'reset' .............................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { counter: 0 } ...................................... passed
+* def waitUntil = ......................................................... passed
+* configure retry = { count: 5, interval: 0 } ............................. passed
+Given url demoBaseUrl ..................................................... passed
+And path 'greeting' ....................................................... passed
+And retry until responseStatus == 200 &amp;&amp; response.id &gt; 3 .................. passed
+When method get ........................................................... passed</system-out>
+  </testcase>
+</testsuite>

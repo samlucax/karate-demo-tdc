@@ -1,0 +1,118 @@
+<testsuite failures="0" name="demo/headers/call-isolated-config.feature" skipped="0" tests="5" time="0.197544">
+  <testcase classname="demo.headers.call-isolated-config" name="fail with a 400 since the header was not set" time="0.044066">
+    <system-out>* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.call-isolated-config" name="fail with a 400 since the cookie was not set" time="0.101372">
+    <system-out>* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* configure headers = { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } . passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.call-isolated-config" name="manually set header and cookie to pass" time="0.0201">
+    <system-out>* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* configure headers = { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } . passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* headers { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } .. passed
+* cookie time = setup.time ................................................ passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.call-isolated-config" name="alternative way of setting headers and cookies 1" time="0.019987">
+    <system-out>* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* configure headers = { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } . passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* headers { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } .. passed
+* cookie time = setup.time ................................................ passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* configure headers = { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } . passed
+* configure cookies = { time: '#(setup.time)' } ........................... passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.call-isolated-config" name="alternative way of setting headers and cookies 2" time="0.012019">
+    <system-out>* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* configure headers = { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } . passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* headers { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } .. passed
+* cookie time = setup.time ................................................ passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* configure headers = { Authorization: '#(setup.token + setup.time + demoBaseUrl)' } . passed
+* configure cookies = { time: '#(setup.time)' } ........................... passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+* def setup = callonce read('common.feature') ............................. passed
+* url demoBaseUrl ......................................................... passed
+* header Authorization = (setup.token + setup.time + demoBaseUrl) ......... passed
+* cookies { time: '#(setup.time)' } ....................................... passed
+Given path 'headers', setup.token ......................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+</testsuite>

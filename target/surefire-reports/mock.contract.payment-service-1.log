@@ -1,0 +1,106 @@
+11:05:16.912 request:
+1 > POST http://localhost:52231/payments
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 40
+1 > Content-Type: application/json; charset=UTF-8
+1 > Host: localhost:52231
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"amount":5.67,"description":"test one"}
+
+11:05:16.923 response time in milliseconds: 10.87
+1 < 200
+1 < Access-Control-Allow-Origin: *
+1 < Content-Type: application/json
+{"amount":5.67,"description":"test one","id":1}
+
+11:05:16.968 [print] ### received: {
+  "paymentId": 1,
+  "status": "shipped"
+}
+
+11:05:16.970 request:
+2 > GET http://localhost:52231/payments/1
+2 > Accept-Encoding: gzip,deflate
+2 > Connection: Keep-Alive
+2 > Host: localhost:52231
+2 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:16.982 response time in milliseconds: 10.57
+2 < 200
+2 < Access-Control-Allow-Origin: *
+2 < Content-Type: application/json
+{"amount":5.67,"description":"test one","id":1}
+
+11:05:16.984 request:
+3 > PUT http://localhost:52231/payments/1
+3 > Accept-Encoding: gzip,deflate
+3 > Connection: Keep-Alive
+3 > Content-Length: 47
+3 > Content-Type: application/json; charset=UTF-8
+3 > Host: localhost:52231
+3 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"id":1,"amount":5.67,"description":"test two"}
+
+11:05:16.995 response time in milliseconds: 10.55
+3 < 200
+3 < Access-Control-Allow-Origin: *
+3 < Content-Type: application/json
+{"id":1,"amount":5.67,"description":"test two"}
+
+11:05:16.997 request:
+4 > GET http://localhost:52231/payments
+4 > Accept-Encoding: gzip,deflate
+4 > Connection: Keep-Alive
+4 > Host: localhost:52231
+4 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:17.005 response time in milliseconds: 6.90
+4 < 200
+4 < Access-Control-Allow-Origin: *
+4 < Content-Type: application/json
+[{"id":1,"amount":5.67,"description":"test two"}]
+
+11:05:17.009 request:
+5 > DELETE http://localhost:52231/payments/1
+5 > Accept-Encoding: gzip,deflate
+5 > Connection: Keep-Alive
+5 > Host: localhost:52231
+5 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:17.018 response time in milliseconds: 8.14
+5 < 200
+5 < Access-Control-Allow-Origin: *
+5 < Content-Type: text/plain
+
+
+11:05:17.019 request:
+6 > GET http://localhost:52231/payments
+6 > Accept-Encoding: gzip,deflate
+6 > Connection: Keep-Alive
+6 > Host: localhost:52231
+6 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:17.028 response time in milliseconds: 8.38
+6 < 200
+6 < Access-Control-Allow-Origin: *
+6 < Content-Type: application/json
+[]
+
+json
+[]
+
+ User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:16.233 response time in milliseconds: 3.09
+6 < 200
+6 < Content-Type: application/json;charset=UTF-8
+6 < Date: Tue, 09 Apr 2019 14:05:16 GMT
+6 < Transfer-Encoding: chunked
+[]
+
+UTF-8
+6 < Date: Tue, 09 Apr 2019 14:05:14 GMT
+6 < Transfer-Encoding: chunked
+[]
+

@@ -1,0 +1,13 @@
+<testsuite failures="0" name="demo/binary/binary.feature" skipped="0" tests="1" time="0.367957">
+  <testcase classname="demo.binary.binary" name="json with byte-array" time="0.367957">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def Base64 = Java.type('java.util.Base64') .............................. passed
+Given path 'echo', 'binary' ............................................... passed
+And def encoded = Base64.encoder.encodeToString('hello'.bytes); ........... passed
+And request { message: 'hello', data: '#(encoded)' } ...................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And def expected = Base64.encoder.encodeToString('world'.bytes); .......... passed
+And match response == { message: 'world', data: '#(expected)' } ........... passed</system-out>
+  </testcase>
+</testsuite>

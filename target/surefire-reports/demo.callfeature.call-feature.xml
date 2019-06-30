@@ -1,0 +1,124 @@
+<testsuite failures="0" name="demo/callfeature/call-feature.feature" skipped="0" tests="6" time="0.407305">
+  <testcase classname="demo.callfeature.call-feature" name="calling a feature with parameters" time="0.046487">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def result = call read('called-normal.feature') { name: 'Nyan', age: 10 } . passed
+* def nyan = result.response .............................................. passed
+* match nyan == { id: '#number', name: 'Nyan' } ........................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.callfeature.call-feature" name="called feature uses '__arg', you can use variable references as the call argument" time="0.032023">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def result = call read('called-normal.feature') { name: 'Nyan', age: 10 } . passed
+* def nyan = result.response .............................................. passed
+* match nyan == { id: '#number', name: 'Nyan' } ........................... passed
+* url demoBaseUrl ......................................................... passed
+* def nyan = { name: 'Nyan' } ............................................. passed
+* def result = call read('called-arg.feature') nyan ....................... passed
+* match result.response contains nyan ..................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.callfeature.call-feature" name="called features will inherit parent scope" time="0.053652">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def result = call read('called-normal.feature') { name: 'Nyan', age: 10 } . passed
+* def nyan = result.response .............................................. passed
+* match nyan == { id: '#number', name: 'Nyan' } ........................... passed
+* url demoBaseUrl ......................................................... passed
+* def nyan = { name: 'Nyan' } ............................................. passed
+* def result = call read('called-arg.feature') nyan ....................... passed
+* match result.response contains nyan ..................................... passed
+* url demoBaseUrl ......................................................... passed
+* def name = 'Nyan' ....................................................... passed
+* def result = call read('called-normal.feature') ......................... passed
+* match result.response contains { name: '#(name)' } ...................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.callfeature.call-feature" name="calling with shared scope, recommended only for 'set-up' re-usable routines" time="0.0778">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def result = call read('called-normal.feature') { name: 'Nyan', age: 10 } . passed
+* def nyan = result.response .............................................. passed
+* match nyan == { id: '#number', name: 'Nyan' } ........................... passed
+* url demoBaseUrl ......................................................... passed
+* def nyan = { name: 'Nyan' } ............................................. passed
+* def result = call read('called-arg.feature') nyan ....................... passed
+* match result.response contains nyan ..................................... passed
+* url demoBaseUrl ......................................................... passed
+* def name = 'Nyan' ....................................................... passed
+* def result = call read('called-normal.feature') ......................... passed
+* match result.response contains { name: '#(name)' } ...................... passed
+* url demoBaseUrl ......................................................... passed
+* def name = 'Nyan' ....................................................... passed
+* call read('called-normal.feature') ...................................... passed
+* match response contains { name: '#(name)' } ............................. passed</system-out>
+  </testcase>
+  <testcase classname="demo.callfeature.call-feature" name="create kittens and then create parent cat" time="0.124762">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def result = call read('called-normal.feature') { name: 'Nyan', age: 10 } . passed
+* def nyan = result.response .............................................. passed
+* match nyan == { id: '#number', name: 'Nyan' } ........................... passed
+* url demoBaseUrl ......................................................... passed
+* def nyan = { name: 'Nyan' } ............................................. passed
+* def result = call read('called-arg.feature') nyan ....................... passed
+* match result.response contains nyan ..................................... passed
+* url demoBaseUrl ......................................................... passed
+* def name = 'Nyan' ....................................................... passed
+* def result = call read('called-normal.feature') ......................... passed
+* match result.response contains { name: '#(name)' } ...................... passed
+* url demoBaseUrl ......................................................... passed
+* def name = 'Nyan' ....................................................... passed
+* call read('called-normal.feature') ...................................... passed
+* match response contains { name: '#(name)' } ............................. passed
+* url demoBaseUrl ......................................................... passed
+* def kittens = call read('create-two-cats.feature') ...................... passed
+* def bob = kittens.bob ................................................... passed
+* def wild = kittens.wild ................................................. passed
+Given path 'cats' ......................................................... passed
+And request ({ name: 'Billie', kittens: [bob, wild] }) .................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('../cats/billie-expected.json') ................ passed
+And def billie = response ................................................. passed
+Given path 'cats', billie.id, 'kittens' ................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match each response == { id: '#number', name: '#string' } ............. passed
+And match response contains { id: '#(wild.id)', name: 'Wild' } ............ passed</system-out>
+  </testcase>
+  <testcase classname="demo.callfeature.call-feature" name="create kittens but calling a feature that has a scenario outline (not recommended)" time="0.072582">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def result = call read('called-normal.feature') { name: 'Nyan', age: 10 } . passed
+* def nyan = result.response .............................................. passed
+* match nyan == { id: '#number', name: 'Nyan' } ........................... passed
+* url demoBaseUrl ......................................................... passed
+* def nyan = { name: 'Nyan' } ............................................. passed
+* def result = call read('called-arg.feature') nyan ....................... passed
+* match result.response contains nyan ..................................... passed
+* url demoBaseUrl ......................................................... passed
+* def name = 'Nyan' ....................................................... passed
+* def result = call read('called-normal.feature') ......................... passed
+* match result.response contains { name: '#(name)' } ...................... passed
+* url demoBaseUrl ......................................................... passed
+* def name = 'Nyan' ....................................................... passed
+* call read('called-normal.feature') ...................................... passed
+* match response contains { name: '#(name)' } ............................. passed
+* url demoBaseUrl ......................................................... passed
+* def kittens = call read('create-two-cats.feature') ...................... passed
+* def bob = kittens.bob ................................................... passed
+* def wild = kittens.wild ................................................. passed
+Given path 'cats' ......................................................... passed
+And request ({ name: 'Billie', kittens: [bob, wild] }) .................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('../cats/billie-expected.json') ................ passed
+And def billie = response ................................................. passed
+Given path 'cats', billie.id, 'kittens' ................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match each response == { id: '#number', name: '#string' } ............. passed
+And match response contains { id: '#(wild.id)', name: 'Wild' } ............ passed
+* url demoBaseUrl ......................................................... passed
+* def kittens = [] ........................................................ passed
+* def result = call read('create-cats-outline.feature') ................... passed
+Given path 'cats' ......................................................... passed
+And request { name: 'Billie', kittens: '#(kittens)' } ..................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Billie', kittens: '#(^^kittens)' } . passed</system-out>
+  </testcase>
+</testsuite>

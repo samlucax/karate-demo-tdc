@@ -1,0 +1,40 @@
+11:05:19.293 request:
+1 > POST https://127.0.0.1:52330/cats
+1 > Accept: application/xml
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 30
+1 > Content-Type: application/xml; charset=UTF-8
+1 > Host: 127.0.0.1:52330
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+<cat>
+  <name>Billie</name>
+</cat>
+
+
+11:05:19.335 response time in milliseconds: 39.41
+1 < 200
+1 < Content-Type: application/xml
+<cat>
+  <name>Billie</name>
+  <id>1</id>
+</cat>
+
+
+11:05:19.340 request:
+2 > GET https://127.0.0.1:52330/cats/1
+2 > Accept: application/xml
+2 > Accept-Encoding: gzip,deflate
+2 > Connection: Keep-Alive
+2 > Host: 127.0.0.1:52330
+2 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:19.364 response time in milliseconds: 19.09
+2 < 200
+2 < Content-Type: application/xml
+<cat>
+  <id>1</id>
+  <name>Billie</name>
+</cat>
+
+

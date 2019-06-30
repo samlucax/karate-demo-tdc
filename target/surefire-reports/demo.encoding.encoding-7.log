@@ -1,0 +1,23 @@
+11:05:01.907 request:
+1 > POST http://127.0.0.1:51918/echo
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 23
+1 > Content-Type: application/json; charset=ISO-8859-1
+1 > Host: 127.0.0.1:51918
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"givenName":"oli����"}
+
+11:05:01.911 response time in milliseconds: 3.72
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Content-Length: 27
+1 < Content-Type: text/plain;charset=UTF-8
+1 < Date: Tue, 09 Apr 2019 14:05:01 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"givenName":"oliàèôç"}
+

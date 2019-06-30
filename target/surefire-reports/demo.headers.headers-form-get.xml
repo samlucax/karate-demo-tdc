@@ -1,0 +1,12 @@
+<testsuite failures="0" name="demo/headers/headers-form-get.feature" skipped="0" tests="1" time="0.036242">
+  <testcase classname="demo.headers.headers-form-get" name="1" time="0.036242">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'search', 'headers' .............................................. passed
+And header Authorization = 'foo' .......................................... passed
+And form field q = 'bar' .................................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def response = karate.lowerCase(response) ............................. passed
+And match response contains { authorization: ['foo'] } .................... passed</system-out>
+  </testcase>
+</testsuite>

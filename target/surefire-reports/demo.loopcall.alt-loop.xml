@@ -1,0 +1,27 @@
+<testsuite failures="0" name="demo/loopcall/alt-loop.feature" skipped="0" tests="2" time="0.219013">
+  <testcase classname="demo.loopcall.alt-loop" name="1" time="0.138335">
+    <system-out>* def cat = { name: 'Tom' } ............................................... passed
+* def type = 'json' ....................................................... passed
+* def file = 'create-' + type + '.feature' ................................ passed
+* def res1 = call read(file) cat .......................................... passed
+* def res2 = call read('result.feature') { id: '#(res1.id)' } ............. passed
+* def response = res2.response ............................................ passed
+* match response == { id: '#(~~res1.id)' , name: 'Tom' } .................. passed</system-out>
+  </testcase>
+  <testcase classname="demo.loopcall.alt-loop" name="2" time="0.080678">
+    <system-out>* def cat = { name: 'Tom' } ............................................... passed
+* def type = 'json' ....................................................... passed
+* def file = 'create-' + type + '.feature' ................................ passed
+* def res1 = call read(file) cat .......................................... passed
+* def res2 = call read('result.feature') { id: '#(res1.id)' } ............. passed
+* def response = res2.response ............................................ passed
+* match response == { id: '#(~~res1.id)' , name: 'Tom' } .................. passed
+* def cat = { name: 'Tom' } ............................................... passed
+* def type = 'xml' ........................................................ passed
+* def file = 'create-' + type + '.feature' ................................ passed
+* def res1 = call read(file) cat .......................................... passed
+* def res2 = call read('result.feature') { id: '#(res1.id)' } ............. passed
+* def response = res2.response ............................................ passed
+* match response == { id: '#(~~res1.id)' , name: 'Tom' } .................. passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,13 @@
+<testsuite failures="0" name="demo/headers/headers-single.feature" skipped="0" tests="1" time="0.101823">
+  <testcase classname="demo.headers.headers-single" name="no extra config - they have been set automatically by the background" time="0.101823">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def time = authInfo.authTime ............................................ passed
+* def token = authInfo.authToken .......................................... passed
+* cookie time = time ...................................................... passed
+* configure headers = read('classpath:headers.js') ........................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+</testsuite>

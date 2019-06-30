@@ -1,0 +1,34 @@
+<testsuite failures="0" name="demo/delete/delete.feature" skipped="0" tests="2" time="0.041586">
+  <testcase classname="demo.delete.delete" name="normal delete without a body" time="0.021172">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'cats' ......................................................... passed
+And request { name: 'Billie' } ............................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+* def cat = response ...................................................... passed
+Given path 'cats', cat.id ................................................. passed
+When method delete ........................................................ passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.delete.delete" name="delete with a request body" time="0.020414">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'cats' ......................................................... passed
+And request { name: 'Billie' } ............................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+* def cat = response ...................................................... passed
+Given path 'cats', cat.id ................................................. passed
+When method delete ........................................................ passed
+Then status 200 ........................................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'cats' ......................................................... passed
+And request { name: 'Billie' } ............................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+* def cat = response ...................................................... passed
+Given path 'cats' ......................................................... passed
+And request cat ........................................................... passed
+When method delete ........................................................ passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+</testsuite>

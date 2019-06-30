@@ -1,0 +1,42 @@
+11:05:19.179 request:
+1 > POST https://127.0.0.1:52330/cats
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 17
+1 > Content-Type: application/json; charset=UTF-8
+1 > Host: 127.0.0.1:52330
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"name":"Billie"}
+
+11:05:19.227 response time in milliseconds: 47.39
+1 < 200
+1 < Content-Type: application/json
+{"name":"Billie","id":0}
+
+11:05:19.232 request:
+2 > GET https://127.0.0.1:52330/cats/0
+2 > Accept-Encoding: gzip,deflate
+2 > Connection: Keep-Alive
+2 > Host: 127.0.0.1:52330
+2 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:19.259 response time in milliseconds: 26.64
+2 < 200
+2 < Content-Type: application/json
+{"name":"Billie","id":0}
+
+11:05:19.264 request:
+3 > PUT https://127.0.0.1:52330/cats/0
+3 > Accept-Encoding: gzip,deflate
+3 > Connection: Keep-Alive
+3 > Content-Length: 29
+3 > Content-Type: application/json; charset=UTF-8
+3 > Host: 127.0.0.1:52330
+3 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"id":0,"name":"Billie Edit"}
+
+11:05:19.278 response time in milliseconds: 13.27
+3 < 200
+3 < Content-Type: application/json
+{"id":0,"name":"Billie Edit"}
+

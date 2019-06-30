@@ -1,0 +1,53 @@
+11:04:59.596 request:
+1 > POST http://127.0.0.1:51918/graphql
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 175
+1 > Content-Type: application/json; charset=UTF-8
+1 > Host: 127.0.0.1:51918
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+{"query":"{\n  pokemon(name: \"Pikachu\") {\n    id\n    number\n    name\n    attacks {\n      special {\n        name\n        type\n        damage\n      }\n    }\n  }\n}"}
+
+11:04:59.623 response time in milliseconds: 21.65
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Content-Length: 256
+1 < Content-Type: text/plain;charset=UTF-8
+1 < Date: Tue, 09 Apr 2019 14:04:59 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"data":{"pokemon":{"id":"UG9rZW1vbjowMjU=","number":"025","name":"Pikachu","attacks":{"special":[{"name":"Discharge","type":"Electric","damage":35},{"name":"Thunder","type":"Electric","damage":100},{"name":"Thunderbolt","type":"Electric","damage":55}]}}}}
+
+11:04:59.649 [print] response: {
+  "data": {
+    "pokemon": {
+      "id": "UG9rZW1vbjowMjU=",
+      "number": "025",
+      "name": "Pikachu",
+      "attacks": {
+        "special": [
+          {
+            "name": "Discharge",
+            "type": "Electric",
+            "damage": 35
+          },
+          {
+            "name": "Thunder",
+            "type": "Electric",
+            "damage": 100
+          },
+          {
+            "name": "Thunderbolt",
+            "type": "Electric",
+            "damage": 55
+          }
+        ]
+      }
+    }
+  }
+}
+
+

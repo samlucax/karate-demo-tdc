@@ -1,0 +1,20 @@
+11:05:17.921 request:
+1 > GET http://127.0.0.1:52252/greeting?name=Billie
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: 127.0.0.1:52252
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:17.933 response time in milliseconds: 11.07
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Content-Type: application/json;charset=UTF-8
+1 < Date: Tue, 09 Apr 2019 14:05:17 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"id":8,"content":"Hello Billie!"}
+

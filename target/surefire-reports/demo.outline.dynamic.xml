@@ -1,0 +1,161 @@
+<testsuite failures="0" name="demo/outline/dynamic.feature" skipped="0" tests="6" time="0.058249">
+  <testcase classname="demo.outline.dynamic" name="cat name: Bob" time="0.008046">
+    <system-out>* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Bob' } ............................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Bob' } ...................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.dynamic" name="cat name: Wild" time="0.011278">
+    <system-out>* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Bob' } ............................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Bob' } ...................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Wild' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Wild' } ..................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.dynamic" name="cat name: Nyan" time="0.017802">
+    <system-out>* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Bob' } ............................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Bob' } ...................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Wild' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Wild' } ..................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Nyan' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Nyan' } ..................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.dynamic" name="cat name: Keyboard" time="0.006713">
+    <system-out>* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Bob' } ............................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Bob' } ...................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Wild' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Wild' } ..................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Nyan' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Nyan' } ..................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Keyboard' } .......................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Keyboard' } ................. passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.dynamic" name="cat name: LOL" time="0.006608">
+    <system-out>* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Bob' } ............................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Bob' } ...................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Wild' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Wild' } ..................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Nyan' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Nyan' } ..................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Keyboard' } .......................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Keyboard' } ................. passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'LOL' } ............................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'LOL' } ...................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.dynamic" name="cat name: Ceiling" time="0.007801">
+    <system-out>* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Bob' } ............................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Bob' } ...................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Wild' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Wild' } ..................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Nyan' } .............................................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Nyan' } ..................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Keyboard' } .......................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Keyboard' } ................. passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'LOL' } ............................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'LOL' } ...................... passed
+* def kittens = read('../callarray/kittens.json') ......................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'cats' ........................................................... passed
+And request { name: 'Ceiling' } ........................................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Ceiling' } .................. passed</system-out>
+  </testcase>
+</testsuite>

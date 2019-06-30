@@ -1,0 +1,10 @@
+<testsuite failures="0" name="demo/upload/upload-multiple-fields.feature" skipped="0" tests="1" time="0.138358">
+  <testcase classname="demo.upload.upload-multiple-fields" name="upload multiple fields" time="0.138358">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'files', 'fields' .............................................. passed
+And multipart fields { message: 'hello world', json: { foo: 'bar' } } ..... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { message: 'hello world', json: { foo: 'bar' } } .... passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,23 @@
+<testsuite failures="0" name="demo/calltable/call-table.feature" skipped="0" tests="1" time="0.334815">
+  <testcase classname="demo.calltable.call-table" name="create parent cat using kittens" time="0.334815">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* table kittens ........................................................... passed
+* def result = call read('kitten-create.feature') kittens ................. passed
+* def created = $result[*].response ....................................... passed
+* match result[*].__loop == [0, 1, 2, 3, 4, 5] ............................ passed
+* match created[*].name == $kittens[*].name ............................... passed
+Given path 'cats' ......................................................... passed
+And request { name: 'Billie', kittens: '#(created)' } ..................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == { id: '#number', name: 'Billie', kittens: '#(^^created)' } . passed
+Given path 'cats', $.id, 'kittens' ........................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+* match each response == { id: '#number', name: '#string' } ............... passed
+* match response == "#[6] { id: '#number', name: '#string' }" ............. passed
+* match response[*].name contains only $kittens[*].name ................... passed
+* assert response.length == 6 ............................................. passed
+* match response == '#[6]' ................................................ passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,12 @@
+<testsuite failures="0" name="demo/loopcall/loop.feature" skipped="0" tests="1" time="0.230857">
+  <testcase classname="demo.loopcall.loop" name="main loop" time="0.230857">
+    <system-out>* def types = ['json', 'xml']; ............................................ passed
+* def cat = { name: 'Tom' } ............................................... passed
+* def fun = read('loop.js') ............................................... passed
+* def response = fun(types, cat) .......................................... passed
+* assert response.length == 2 ............................................. passed
+* match each response == { id: '#number', name: 'Tom' } ................... passed
+* match each response contains cat ........................................ passed
+* match response == '#[2] ^cat' ........................................... passed</system-out>
+  </testcase>
+</testsuite>

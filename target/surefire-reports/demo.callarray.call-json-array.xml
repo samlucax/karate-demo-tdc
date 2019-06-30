@@ -1,0 +1,20 @@
+<testsuite failures="0" name="demo/callarray/call-json-array.feature" skipped="0" tests="1" time="0.613236">
+  <testcase classname="demo.callarray.call-json-array" name="create parent cat using kittens" time="0.613236">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def creator = read('kitten-create.feature') ............................. passed
+* def kittens = read('kittens.json') ...................................... passed
+* def result = call creator kittens ....................................... passed
+* def created = $result[*].response ....................................... passed
+Given path 'cats' ......................................................... passed
+And request { name: 'Billie', kittens: '#(created)' } ..................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And def billie = response ................................................. passed
+Given path 'cats', billie.id, 'kittens' ................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match each response == { id: '#number', name: '#string' } ............. passed
+And match response[*].name contains ['LOL', 'Nyan'] ....................... passed
+And assert response.length == 6 ........................................... passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,17 @@
+<testsuite failures="0" name="demo/java/cats-java.feature" skipped="0" tests="1" time="0.100756">
+  <testcase classname="demo.java.cats-java" name="pass json to java" time="0.100756">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def JavaDemo = Java.type('com.intuit.karate.demo.util.JavaDemo') ........ passed
+Given path 'cats' ......................................................... passed
+And request { name: 'Sillie' } ............................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+* def name = JavaDemo.getName(response) ................................... passed
+* assert name == 'Sillie' ................................................. passed
+Given path 'cats' ......................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+* def names = JavaDemo.getNames(response) ................................. passed
+* match names contains ['Sillie'] ......................................... passed</system-out>
+  </testcase>
+</testsuite>

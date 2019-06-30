@@ -1,0 +1,12 @@
+<testsuite failures="0" name="demo/headers/null-header.feature" skipped="0" tests="1" time="0.022497">
+  <testcase classname="demo.headers.null-header" name="1" time="0.022497">
+    <system-out>* def blah = null ......................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'search', 'headers' .............................................. passed
+And headers { foo: 'bar', blah: '#(blah)' } ............................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response contains { foo: ['bar'] } .............................. passed
+And match response !contains { blah: '#notnull' } ......................... passed</system-out>
+  </testcase>
+</testsuite>

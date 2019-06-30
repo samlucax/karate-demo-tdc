@@ -1,0 +1,382 @@
+<testsuite failures="0" name="demo/outline/examples.feature" skipped="0" tests="10" time="0.14779">
+  <testcase classname="demo.outline.examples" name="name: 'foo' and country: 'IN'" time="0.007593">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="name: 'bar' and country: null" time="0.00694">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="name: 'baz' and country: 'JP'" time="0.023752">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'baz', country: 'JP', active: null, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { active: '#notnull', limit: '#notnull' } .... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="name: null and country: 'US'" time="0.007569">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'baz', country: 'JP', active: null, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { active: '#notnull', limit: '#notnull' } .... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: 'US', active: null, limit: 3 } .......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', active: '#notnull' } ..... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="name: null and country: null" time="0.007416">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'baz', country: 'JP', active: null, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { active: '#notnull', limit: '#notnull' } .... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: 'US', active: null, limit: 3 } .......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', active: '#notnull' } ..... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: null, active: false, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', country: '#notnull', limit: '#notnull' } . passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="expressions - index: 0 and country: 'IN'" time="0.023304">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'baz', country: 'JP', active: null, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { active: '#notnull', limit: '#notnull' } .... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: 'US', active: null, limit: 3 } .......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', active: '#notnull' } ..... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: null, active: false, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', country: '#notnull', limit: '#notnull' } . passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.first)', country: 'IN', active: true, limit: 1 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[0] ................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="expressions - index: 1 and country: null" time="0.020282">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'baz', country: 'JP', active: null, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { active: '#notnull', limit: '#notnull' } .... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: 'US', active: null, limit: 3 } .......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', active: '#notnull' } ..... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: null, active: false, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', country: '#notnull', limit: '#notnull' } . passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.first)', country: 'IN', active: true, limit: 1 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[0] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.second)', country: null, active: null, limit: 5 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[1] ................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="expressions - index: 2 and country: 'JP'" time="0.015498">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'baz', country: 'JP', active: null, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { active: '#notnull', limit: '#notnull' } .... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: 'US', active: null, limit: 3 } .......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', active: '#notnull' } ..... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: null, active: false, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', country: '#notnull', limit: '#notnull' } . passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.first)', country: 'IN', active: true, limit: 1 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[0] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.second)', country: null, active: null, limit: 5 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[1] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.third)', country: 'JP', active: null, limit: null } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[2] ................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="expressions - index: 3 and country: 'US'" time="0.015739">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'baz', country: 'JP', active: null, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { active: '#notnull', limit: '#notnull' } .... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: 'US', active: null, limit: 3 } .......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', active: '#notnull' } ..... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: null, active: false, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', country: '#notnull', limit: '#notnull' } . passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.first)', country: 'IN', active: true, limit: 1 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[0] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.second)', country: null, active: null, limit: 5 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[1] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.third)', country: 'JP', active: null, limit: null } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[2] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.fourth)', country: 'US', active: null, limit: 3 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[3] ................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.outline.examples" name="expressions - index: 4 and country: null" time="0.019698">
+    <system-out>* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'foo', country: 'IN', active: true, limit: 1 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains {} ........................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'bar', country: null, active: null, limit: 5 } ......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { country: '#notnull', active: '#notnull' } .. passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: 'baz', country: 'JP', active: null, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { active: '#notnull', limit: '#notnull' } .... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: 'US', active: null, limit: 3 } .......... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', active: '#notnull' } ..... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: null, country: null, active: false, limit: null } ...... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains { name: '#notnull', country: '#notnull', limit: '#notnull' } . passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.first)', country: 'IN', active: true, limit: 1 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[0] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.second)', country: null, active: null, limit: 5 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[1] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.third)', country: 'JP', active: null, limit: null } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[2] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.fourth)', country: 'US', active: null, limit: 3 } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[3] ................................... passed
+* url demoBaseUrl ......................................................... passed
+* def names = { first: 'foo', second: 'bar', third: 'baz', fourth: null, fifth: null } . passed
+* def missing = ........................................................... passed
+Given path 'search' ....................................................... passed
+And params { name: '#(names.fifth)', country: null, active: false, limit: null } . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response !contains missing[4] ................................... passed</system-out>
+  </testcase>
+</testsuite>

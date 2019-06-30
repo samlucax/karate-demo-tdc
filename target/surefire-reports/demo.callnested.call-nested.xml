@@ -1,0 +1,7 @@
+<testsuite failures="0" name="demo/callnested/call-nested.feature" skipped="0" tests="1" time="0.109429">
+  <testcase classname="demo.callnested.call-nested" name="calling a feature with parameters" time="0.109429">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* print 'in main caller' .................................................. passed
+* call read('called1.feature') ............................................ passed</system-out>
+  </testcase>
+</testsuite>

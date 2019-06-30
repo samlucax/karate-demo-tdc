@@ -1,0 +1,18 @@
+<testsuite failures="0" name="demo/embed/embed.feature" skipped="0" tests="3" time="0.164562">
+  <testcase classname="demo.embed.embed" name="embed html" time="0.006998">
+    <system-out>* eval karate.embed('&lt;h1&gt;Hello World&lt;/h1&gt;', 'text/html') .................. passed</system-out>
+  </testcase>
+  <testcase classname="demo.embed.embed" name="embed image" time="0.021709">
+    <system-out>* eval karate.embed('&lt;h1&gt;Hello World&lt;/h1&gt;', 'text/html') .................. passed
+* def bytes = read('../upload/karate-logo.jpg') ........................... passed
+* eval karate.embed(bytes, 'image/jpeg') .................................. passed</system-out>
+  </testcase>
+  <testcase classname="demo.embed.embed" name="embed pdf" time="0.135854">
+    <system-out>* eval karate.embed('&lt;h1&gt;Hello World&lt;/h1&gt;', 'text/html') .................. passed
+* def bytes = read('../upload/karate-logo.jpg') ........................... passed
+* eval karate.embed(bytes, 'image/jpeg') .................................. passed
+* def bytes = read('../upload/test.pdf') .................................. passed
+* def embedder = read('embed-pdf.js') ..................................... passed
+* eval embedder(bytes) .................................................... passed</system-out>
+  </testcase>
+</testsuite>

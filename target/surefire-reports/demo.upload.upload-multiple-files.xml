@@ -1,0 +1,31 @@
+<testsuite failures="0" name="demo/upload/upload-multiple-files.feature" skipped="0" tests="1" time="0.172492">
+  <testcase classname="demo.upload.upload-multiple-files" name="upload multiple files" time="0.172492">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* def json = {} ........................................................... passed
+* set json.myFile1 = { read: 'test.pdf', filename: 'upload-name1.pdf', contentType: 'application/pdf' } . passed
+* def key = 'myFile2' ..................................................... passed
+* eval json[key] = { read: 'test.pdf', filename: 'upload-name2.pdf', contentType: 'application/pdf' } . passed
+Given path 'files', 'multiple' ............................................ passed
+And multipart files json .................................................. passed
+And multipart field message = 'hello world' ............................... passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == [{ id: '#uuid', filename: 'upload-name1.pdf', message: 'hello world', contentType: 'application/pdf' }, { id: '#uuid', filename: 'upload-name2.pdf', message: 'hello world', contentType: 'application/pdf' }] . passed
+And def id1 = response[0].id .............................................. passed
+And def id2 = response[1].id .............................................. passed
+Given path 'files', id1 ................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('test.pdf') .................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'upload-name1.pdf' .......... passed
+And match header Content-Type == 'application/pdf' ........................ passed
+Given path 'files', id2 ................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == read('test.pdf') .................................... passed
+And match header Content-Disposition contains 'attachment' ................ passed
+And match header Content-Disposition contains 'upload-name2.pdf' .......... passed
+And match header Content-Type == 'application/pdf' ........................ passed</system-out>
+  </testcase>
+</testsuite>

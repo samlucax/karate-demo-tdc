@@ -1,0 +1,19 @@
+<testsuite failures="0" name="demo/cats/cats-xml.feature" skipped="0" tests="1" time="0.081521">
+  <testcase classname="demo.cats.cats-xml" name="create and retrieve a cat" time="0.081521">
+    <system-out>* url demoBaseUrl ......................................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure logPrettyResponse = true ...................................... passed
+* configure headers = { Accept: 'application/xml' } ....................... passed
+Given path 'cats' ......................................................... passed
+And request &lt;cat&gt;&lt;name&gt;Billie&lt;/name&gt;&lt;/cat&gt; ................................ passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And match response == &lt;cat&gt;&lt;id&gt;#notnull&lt;/id&gt;&lt;name&gt;Billie&lt;/name&gt;&lt;/cat&gt; ..... passed
+* def id = /cat/id ........................................................ passed
+Given path 'cats', id ..................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == &lt;cat&gt;&lt;id&gt;#(id)&lt;/id&gt;&lt;name&gt;Billie&lt;/name&gt;&lt;/cat&gt; ........ passed
+And assert responseStatus == 204 || responseStatus == 200 ................. passed</system-out>
+  </testcase>
+</testsuite>

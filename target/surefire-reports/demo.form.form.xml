@@ -1,0 +1,12 @@
+<testsuite failures="0" name="demo/form/form.feature" skipped="0" tests="1" time="0.03915">
+  <testcase classname="demo.form.form" name="should be able to over-ride the content-type" time="0.03915">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'search', 'headers' .............................................. passed
+And form field text = 'hello' ............................................. passed
+And header Content-Type = 'application/json' .............................. passed
+When method post .......................................................... passed
+Then status 200 ........................................................... passed
+And def response = karate.lowerCase(response) ............................. passed
+And match response['content-type'][0] contains 'application/json' ......... passed</system-out>
+  </testcase>
+</testsuite>

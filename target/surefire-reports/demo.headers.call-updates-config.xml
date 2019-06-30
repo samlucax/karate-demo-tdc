@@ -1,0 +1,45 @@
+<testsuite failures="0" name="demo/headers/call-updates-config.feature" skipped="0" tests="3" time="0.164075">
+  <testcase classname="demo.headers.call-updates-config" name="no extra config - they have been set automatically by 'common.feature'" time="0.073025">
+    <system-out>* callonce read('common.feature') ......................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.call-updates-config" name="make sure that the second scenario works as well with callonce" time="0.055337">
+    <system-out>* callonce read('common.feature') ......................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+* callonce read('common.feature') ......................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.call-updates-config" name="here we erase the configured headers to get a 400" time="0.035712">
+    <system-out>* callonce read('common.feature') ......................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+* callonce read('common.feature') ......................................... passed
+* url demoBaseUrl ......................................................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+* callonce read('common.feature') ......................................... passed
+* url demoBaseUrl ......................................................... passed
+* configure headers = null ................................................ passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 400 ........................................................... passed</system-out>
+  </testcase>
+</testsuite>

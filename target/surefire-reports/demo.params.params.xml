@@ -1,0 +1,102 @@
+<testsuite failures="0" name="demo/params/params.feature" skipped="0" tests="5" time="0.153797">
+  <testcase classname="demo.params.params" name="first scenario as an outline" time="0.033801">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = 'a' ......................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a'] } ........................................ passed</system-out>
+  </testcase>
+  <testcase classname="demo.params.params" name="first scenario as an outline" time="0.014515">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = 'a' ......................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a'] } ........................................ passed
+Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = ['a', 'b'] .................................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a', 'b'] } ................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.params.params" name="comma delimited param value (normal)" time="0.011221">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = 'a' ......................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a'] } ........................................ passed
+Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = ['a', 'b'] .................................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a', 'b'] } ................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param fieldList = 'name,id,date_created,date_modified,created_id,modified_id' . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.fieldList[0] == 'name,id,date_created,date_modified,created_id,modified_id' . passed</system-out>
+  </testcase>
+  <testcase classname="demo.params.params" name="comma delimited param value (in url)" time="0.053716">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = 'a' ......................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a'] } ........................................ passed
+Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = ['a', 'b'] .................................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a', 'b'] } ................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param fieldList = 'name,id,date_created,date_modified,created_id,modified_id' . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.fieldList[0] == 'name,id,date_created,date_modified,created_id,modified_id' . passed
+Given url demoBaseUrl + '?fieldList=name,id,date_created,date_modified,created_id,modified_id' . passed
+And path 'echo' ........................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.fieldList[0] == 'name,id,date_created,date_modified,created_id,modified_id' . passed</system-out>
+  </testcase>
+  <testcase classname="demo.params.params" name="parameter which is an array and dynamic" time="0.040545">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = 'a' ......................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a'] } ........................................ passed
+Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param p = ['a', 'b'] .................................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { p: ['a', 'b'] } ................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And param fieldList = 'name,id,date_created,date_modified,created_id,modified_id' . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.fieldList[0] == 'name,id,date_created,date_modified,created_id,modified_id' . passed
+Given url demoBaseUrl + '?fieldList=name,id,date_created,date_modified,created_id,modified_id' . passed
+And path 'echo' ........................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.fieldList[0] == 'name,id,date_created,date_modified,created_id,modified_id' . passed
+* def fun = ............................................................... passed
+* json array = fun() ...................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'echo' ........................................................... passed
+And params { pl: '#(array)' } ............................................. passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == { pl: ['r', 'r', 'r', 'r', 'r'] } ................... passed</system-out>
+  </testcase>
+</testsuite>

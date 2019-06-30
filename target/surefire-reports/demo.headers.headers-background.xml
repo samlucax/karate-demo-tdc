@@ -1,0 +1,39 @@
+<testsuite failures="0" name="demo/headers/headers-background.feature" skipped="0" tests="2" time="0.12473">
+  <testcase classname="demo.headers.headers-background" name="first" time="0.082715">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+* header Authorization = token + time + demoBaseUrl ....................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+  <testcase classname="demo.headers.headers-background" name="second" time="0.042015">
+    <system-out>Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+* header Authorization = token + time + demoBaseUrl ....................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+Given url demoBaseUrl ..................................................... passed
+And path 'headers' ........................................................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And def token = response .................................................. passed
+And def time = responseCookies.time.value ................................. passed
+* header Authorization = token + time + demoBaseUrl ....................... passed
+Given path 'headers', token ............................................... passed
+And param url = demoBaseUrl ............................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+</testsuite>

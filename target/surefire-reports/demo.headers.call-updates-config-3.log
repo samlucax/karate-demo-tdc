@@ -1,0 +1,22 @@
+11:04:58.428 request:
+1 > GET http://127.0.0.1:51918/headers/6c69cc53-20d8-4f08-a32e-b0ff3155a4f6?url=http%3A%2F%2F127.0.0.1%3A51918
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Cookie: time=1554818698251
+1 > Host: 127.0.0.1:51918
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:04:58.457 response time in milliseconds: 25.79
+1 < 400
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: close
+1 < Content-Type: application/json;charset=UTF-8
+1 < Date: Tue, 09 Apr 2019 14:04:58 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"timestamp":1554818698445,"status":400,"error":"Bad Request","exception":"org.springframework.web.bind.ServletRequestBindingException","message":"Missing request header 'Authorization' for method parameter of type String[]","path":"/headers/6c69cc53-20d8-4f08-a32e-b0ff3155a4f6"}
+

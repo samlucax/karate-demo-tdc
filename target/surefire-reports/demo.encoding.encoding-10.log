@@ -1,0 +1,22 @@
+11:05:02.020 request:
+1 > POST http://127.0.0.1:51918/files
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Content-Length: 13970
+1 > Content-Type: multipart/form-data; boundary=KugaeuTMtSncrpS6HDWcfec4AJqWUMX5x5Y2_e4
+1 > Host: 127.0.0.1:51918
+1 > User-Agent: Apache-HttpClient/4.5.5 (Java/1.8.0_181)
+
+11:05:02.029 response time in milliseconds: 8.20
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Content-Type: application/json;charset=UTF-8
+1 < Date: Tue, 09 Apr 2019 14:05:01 GMT
+1 < Expires: 0
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"id":"92fe75da-89bf-4955-a9b3-0b9a85d074fd","filename":"karate-logo.jpg","message":"oli???? M?ller","contentType":"image/jpg"}
+
