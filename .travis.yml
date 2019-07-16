@@ -11,9 +11,7 @@ install: true
 jobs:
   include:
     - stage: cleaning
-      script: mvn clean 
-    - # stage name not required, will continue to use `test`
-      script: ./test 2
+      script: mvn clean
     - stage: installing
       script: mvn install -P pre-release -Dmaven.javadoc.skip=true -B -V -DskipTests
     - stage: tests
