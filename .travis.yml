@@ -7,7 +7,19 @@ addons:
     packages:
       - oracle-java8-installer
 install: true
-script: mvn install -P pre-release -Dmaven.javadoc.skip=true -B -V
+
+jobs:
+  include:
+    - stage: cleaning
+      script: mvn clean 
+    - # stage name not required, will continue to use `test`
+      script: ./test 2
+    - stage: installing
+      script: mvn install -P pre-release -Dmaven.javadoc.skip=true -B -V -DskipTests
+    - stage: tests
+      script: mvn test -P pre-release
+
+#script: mvn install -P pre-release -Dmaven.javadoc.skip=true -B -V
 
 cache:
   directories:
