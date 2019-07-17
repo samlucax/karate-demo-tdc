@@ -1,9 +1,0 @@
-<testsuite failures="0" name="demo/tags/second.feature" skipped="0" tests="2" time="0.010872">
-  <testcase classname="demo.tags.second" name="f2 - s1" time="0.003244">
-    <system-out>* print 'second feature, first scenario' .................................. passed</system-out>
-  </testcase>
-  <testcase classname="demo.tags.second" name="f2 - s2" time="0.007628">
-    <system-out>* print 'second feature, first scenario' .................................. passed
-* print 'second feature, second scenario:@smoke @fire' .................... passed</system-out>
-  </testcase>
-</testsuite>

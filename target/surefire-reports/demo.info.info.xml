@@ -1,7 +1,0 @@
-<testsuite failures="0" name="demo/info/info.feature" skipped="0" tests="1" time="0.014773">
-  <testcase classname="demo.info.info" name="first scenario" time="0.014773">
-    <system-out>* def info = karate.info .................................................. passed
-* print 'info:', info ..................................................... passed
-* match info contains { scenarioName: 'first scenario', featureFileName: 'info.feature' } . passed</system-out>
-  </testcase>
-</testsuite>
