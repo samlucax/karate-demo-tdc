@@ -1,7 +1,14 @@
+@aceitacao
 Feature: dogs end-point that uses jdbc as part of the test
 
 Background:
 * url demoBaseUrl
+
+@healthcheck
+Scenario: healthcheck dogs and cats
+Given path 'dogs'
+When method get
+Then status 200
 
 Scenario: create and retrieve a dog
 

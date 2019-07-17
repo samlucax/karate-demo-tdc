@@ -10,14 +10,16 @@ install: true
 
 jobs:
   include:
-    - stage: cleaning
-      script: mvn clean
-    - stage: installing
-      script: mvn install -P pre-release -Dmaven.javadoc.skip=true -B -V -DskipTests
-    - stage: tests
-      script: mvn test -P pre-release
-
-#script: mvn install -P pre-release -Dmaven.javadoc.skip=true -B -V
+    - stage: build
+      script: mvn clean install -P pre-release -DskipTests
+    - stage: healthcheck
+      script: mvn test -P pre-release -Dtest=DemoTestHealthcheck
+    - stage: contrato
+      script: mvn test -P pre-release -Dtest=DemoTestContrato
+    - stage: aceitacao
+      script: mvn test -P pre-release -Dtest=DemoTestAceitacao
+    - stage: funcional
+      script: mvn test -P pre-release -Dtest=DemoTestParallel
 
 cache:
   directories:

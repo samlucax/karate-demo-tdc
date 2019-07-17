@@ -9,6 +9,7 @@ Scenario: using a third-party lib and a schema file
     * def SchemaUtils = Java.type('com.intuit.karate.demo.util.SchemaUtils')
     * assert SchemaUtils.isValid(json, schema)
 
+@contrato
 Scenario: using karate's simpler alternative to json-schema
     * def warehouseLocation = { latitude: '#number', longitude: '#number' }
     * def productStructure =
